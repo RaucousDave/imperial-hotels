@@ -1,0 +1,173 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: hsl(0, 0%, 88%);
+}
+:root {
+  --accent-color: #e6c368;
+}
+body,
+html {
+  overflow-x: hidden;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "LIbre Baskerville";
+}
+p,
+a {
+  font-family: "Urbanist";
+  color: #6d6d6d;
+}
+img,
+svg {
+  width: 100%;
+  height: auto;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style-type: none;
+}
+.content-tags a {
+  margin: 0 10px;
+  position: relative;
+  cursor: pointer;
+  font-size: 14px;
+  color: #6d6d6d;
+}
+
+.content-tags a::before {
+  content: "";
+  position: absolute;
+  top: 1.5rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 0%;
+  height: 2px;
+  transform: translateX(-10%);
+  background-color: var(--accent-color);
+  transition: all 500ms ease;
+}
+.content-tags a:hover::before {
+  width: 100%;
+  transform: translateX(0%);
+}
+.content-tags a.active {
+  position: relative;
+  color: var(--accent-color); /* Highlight active tag */
+  font-weight: bold;
+}
+.carousel {
+  position: relative;
+}
+.content-tags a.active::before {
+  content: "";
+  position: absolute;
+  bottom: -3px; /* Moves the underline lower */
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent-color);
+}
+.content {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.content.active {
+  position: relative;
+  display: flex;
+  gap: 30px;
+  opacity: 1;
+  visibility: visible;
+  animation: slideInFromRight 0.5s ease forwards;
+}
+
+@keyframes slideInFromRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px); /* Start slightly off-screen */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.tags {
+  cursor: pointer;
+}
+.tags.active {
+  font-weight: bold; /* Optional: Highlight the active tab */
+}
+
+.content-tags {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+.rooms-container {
+  padding: 20px 10px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content-img {
+  width: 150%;
+}
+.content-img img {
+  border-radius: 10px;
+  box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.1);
+}
+.content {
+  transform: translateX(100%);
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.carousel {
+  padding: 15px 20px;
+  padding-top: 5rem;
+  margin-bottom: 3rem;
+}
+.copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.copy h1 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+  color: hsl(0, 0%, 23%);
+}
+.copy p {
+  font-weight: 300;
+  line-height: 1.5rem;
+}
+a.cta.btn {
+  padding: 10px 15px;
+  background-color: transparent;
+  border: 2px solid var(--accent-color);
+  text-transform: uppercase;
+  transition: all 500ms ease, transform 500ms ease;
+}
+a.cta.btn:hover {
+  background-color: var(--accent-color);
+  color: white;
+  outline: none;
+}
