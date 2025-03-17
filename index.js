@@ -1,18 +1,36 @@
+const slider = document.getElementById("slider");
+const prevBtn = document.getElementById("prev");
+const nextBtn = document.getElementById("next");
+let index = 0;
+
+const updateSlider = () => {
+  slider.style.transform = `translateX(-${index * 100}%)`;
+};
+
+nextBtn.addEventListener("click", () => {
+  index = (index + 1) % 3;
+  updateSlider();
+});
+
+prevBtn.addEventListener("click", () => {
+  index = (index - 1 + 3) % 3;
+  updateSlider();
+});
+
 document.addEventListener("DOMContentLoaded", () => {
-  const tags = document.querySelectorAll(".content-tags a");
-  const contents = document.querySelectorAll(".carousel .content");
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove("opacity-0", "translate-y-10");
+          observer.unobserve(entry.target); // Ensures animation runs only once
+        }
+      });
+    },
+    { threshold: 0.1 }
+  );
 
-  tags.forEach((tag, index) => {
-    tag.addEventListener("click", (event) => {
-      event.preventDefault(); // Prevents any unintended navigation
-
-      // Remove 'active' class from all tags and content
-      tags.forEach((t) => t.classList.remove("active"));
-      contents.forEach((content) => content.classList.remove("active"));
-
-      // Add 'active' class to the clicked tag and corresponding content
-      tag.classList.add("active");
-      contents[index].classList.add("active");
-    });
+  document.querySelectorAll("[data-animate]").forEach((element) => {
+    observer.observe(element);
   });
 });
