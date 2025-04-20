@@ -20,13 +20,13 @@
   </head>
   <body>
     <header
-      class="fixed top-0 left-0 w-full z-50 flex justify-between px-5 py-6 bg-[#2A2A2A]"
+      class="fixed top-0 left-0 w-full z-50 flex justify-between px-5 py-6 bg-[#1A1A1A]"
     >
       <div class="logo font-heading text-white">IMPERIAL HOTELS</div>
       <i class="fas fa-bars text-white size-6" id="menu-bar"></i>
       <nav
         id="nav-menu"
-        class="fixed top-0 right-0 h-full w-[250px] bg-[#2A2A2A] text-white flex flex-col items-center gap-6 pt-16 transition-transform translate-x-full duration-500 shadow-lg"
+        class="fixed top-0 right-0 h-full w-[200px] bg-[#1A1A1A] text-white flex flex-col items-center gap-6 pt-16 transition-transform translate-x-full duration-500 shadow-lg"
       >
         <i id="close-menu" class="absolute top-5 right-8 text-2xl fas fa-xmark">
         </i>
@@ -52,10 +52,10 @@
     </header>
 
     <section id="hero" class="gap-[20px]">
-      <h1 class="text-white text-5xl text-center mb-[5px]">
+      <h1 class="text-white text-4xl md:text-5xl text-center mb-[5px]">
         Experience Unparalleled Luxury & Elegance
       </h1>
-      <p class="text-white text-center text-lg">
+      <p class="text-white text-center text-md md:text-lg">
         Indulge in world-class hospitality, breathtaking views, and unmatched
         comfort
       </p>
@@ -70,12 +70,12 @@
       class="flex flex-col justify-center bg-[#BFA77F] px-4 py-6 pb-[3rem]"
     >
       <h1 class="text-4xl text-center mb-[50px]">About Us</h1>
-      <div class="flex gap-[30px]">
-        <div class="w-[50%]">
+      <div class="flex flex-col md:flex-row gap-[30px]">
+        <div class="md:w-[50%]">
           <img src="assets/about-img.avif" alt="" />
         </div>
-        <div class="w-[50%]">
-          <p class="text-[16px]">
+        <div class="md:w-[50%]">
+          <p class="text-[16px] text-center md:text-left">
             Nestled in the heart of the city, Imperial Hotels is a sanctuary of
             elegance, comfort, and world-class service. Designed for those who
             appreciate the finer things in life, our hotel blends contemporary
@@ -104,11 +104,11 @@
           id="slider"
         >
           <!-- Room 1 -->
-          <div class="min-w-full flex-shrink-0 p-4">
+          <div class="md:min-w-full w-[100%] flex-shrink-0 p-4">
             <img
               src="assets/luxury.avif"
               alt="Luxury Suite"
-              class="w-full h-64 object-cover"
+              class="md:w-full min-w-0 h-64 object-cover"
             />
             <h3 class="text-3xl font-heading text-gold mt-4">Luxury Suite</h3>
             <p class="text-black text-sm text-[16px]">
@@ -117,29 +117,29 @@
           </div>
 
           <!-- Room 2 -->
-          <div class="min-w-full flex-shrink-0 p-4">
+          <div class="md:min-w-full w-[100%] flex-shrink-0 p-4">
             <img
               src="assets/presidential-suite.jpeg"
               alt="Presidential Room"
-              class="w-full h-64 object-cover"
+              class="md:w-full min-w-0 h-64 object-cover"
             />
-            <h3 class="text-xl font-heading text-gold mt-4">
+            <h3 class="text-3xl font-heading text-gold mt-4">
               Presidential Room
             </h3>
-            <p class="text-black text-sm">
+            <p class="text-black text-sm text-[16px]">
               Spacious and grand, offering unmatched comfort and luxury.
             </p>
           </div>
 
           <!-- Room 3 -->
-          <div class="min-w-full flex-shrink-0 p-4">
+          <div class="md:min-w-full w-[100%] flex-shrink-0 p-4">
             <img
               src="assets/executive-room.jpeg"
               alt="Executive Room"
-              class="w-full h-64 object-cover"
+              class="md:w-full min-w-0 h-64 object-cover"
             />
-            <h3 class="text-xl font-heading text-gold mt-4">Executive Room</h3>
-            <p class="text-black text-sm">
+            <h3 class="text-3xl font-heading text-gold mt-4">Executive Room</h3>
+            <p class="text-black text-sm text-[16px]">
               Perfect for business travelers, featuring modern elegance.
             </p>
           </div>
