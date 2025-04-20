@@ -23,13 +23,30 @@
       class="fixed top-0 left-0 w-full z-50 flex justify-between px-5 py-6 bg-[#2A2A2A]"
     >
       <div class="logo font-heading text-white">IMPERIAL HOTELS</div>
-      <nav class="flex">
-        <ul class="flex gap-[10px] [&>li]:text-white [&>li]:text-[14px]">
-          <li><a href="#">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#rooms">Rooms</a></li>
-          <li><a href="#amenities">Amenities</a></li>
-          <li><a href="#contact">Contact</a></li>
+      <i class="fas fa-bars text-white size-6" id="menu-bar"></i>
+      <nav
+        id="nav-menu"
+        class="fixed top-0 right-0 h-full w-[250px] bg-[#2A2A2A] text-white flex flex-col items-center gap-6 pt-16 transition-transform translate-x-full duration-500 shadow-lg"
+      >
+        <i id="close-menu" class="absolute top-5 right-8 text-2xl fas fa-xmark">
+        </i>
+        <ul class="flex flex-col gap-4 text-sm w-full text-center">
+          <li>
+            <a href="#home" class="block py-2">Home</a>
+          </li>
+          <li>
+            <a href="#about" class="block py-2">About</a>
+          </li>
+          <li>
+            <a href="#services" class="block py-2">Rooms</a>
+          </li>
+
+          <li>
+            <a href="#testimonials" class="block py-2">Services</a>
+          </li>
+          <li>
+            <a href="#contact" class="block py-2">Contact</a>
+          </li>
         </ul>
       </nav>
     </header>
@@ -266,11 +283,12 @@
               placeholder="Your message..."
             ></textarea>
           </div>
-          <button
-            class="w-full bg-black text-white py-3 rounded-md text-lg font-semibold transition-all"
+
+          <a
+            href="mailto:sagefrugal@gmail.com"
+            class="bg-black text-white py-3 px-6 rounded-md text-lg font-semibold transition-all"
+            >Send Message</a
           >
-            Send Message
-          </button>
         </form>
 
         <!-- Contact Info -->

@@ -16,8 +16,10 @@ prevBtn.addEventListener("click", () => {
   index = (index - 1 + 3) % 3;
   updateSlider();
 });
-
 document.addEventListener("DOMContentLoaded", () => {
+  const menu = document.getElementById("menu-bar");
+  const closeIcon = document.getElementById("close-icon");
+  const navbar = document.querySelector("nav-menu");
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -32,5 +34,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.querySelectorAll("[data-animate]").forEach((element) => {
     observer.observe(element);
+  });
+  const menuToggle = document.getElementById("menu-bar");
+  const navMenu = document.getElementById("nav-menu");
+  const closeMenu = document.getElementById("close-menu");
+
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.remove("translate-x-full");
+    //   navMenu.style.display = "none";
+  });
+
+  closeMenu.addEventListener("click", () => {
+    navMenu.classList.add("translate-x-full");
+    navMenu.style.display = "flex";
   });
 });
